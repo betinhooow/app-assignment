@@ -1,0 +1,21 @@
+@import './../../../../assets/styles/origin-variables';
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  min-width: 360px;
+  align-items: center;
+  background-color: $white;
+}
+
+.toolbar img {
+  margin: 0 56px;
+}
+
+.origin-logo {
+  content: url("./../../../../assets/images/logo-sm.svg");
+}

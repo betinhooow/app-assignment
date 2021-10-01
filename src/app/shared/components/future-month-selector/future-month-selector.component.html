@@ -1,0 +1,13 @@
+<div class="future-month-selector" data-cy="at-reach-date">
+  <label>{{ label }}</label>
+  <div class="month-selector">
+    <img src="assets/images/arrow-left.svg" data-cy="at-reach-date-arrow-left" alt="Previous month" (click)="changePreviousMonth()" />
+
+    <div class="data">
+      <span class="month">{{ month }}</span>
+      <span class="year">{{ year }}</span>
+    </div>
+
+    <img src="assets/images/arrow-right.svg" data-cy="at-reach-date-arrow-right" alt="Next month" (click)="changeNextMonth()" />
+  </div>
+</div>

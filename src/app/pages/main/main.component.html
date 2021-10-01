@@ -1,0 +1,36 @@
+<div class="content" role="main">
+  <h2>Let's plan your <b>saving goal.</b></h2>
+  <div class="card" data-cy="at-card">
+    <div class="card-header">
+      <img src="assets/images/home.svg" alt="buy a house" />
+      <div class="header-data">
+        <h1>Buy a house</h1>
+        <span>Saving goal</span>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <form [formGroup]="savingForm">
+        <app-input-currency formControlName="amount" label="Total amount" data-cy="at-amount-input"></app-input-currency>
+        <app-future-month-selector formControlName="reachDate" label="Reach goal by"></app-future-month-selector>
+      </form>
+
+      <div class="order-result">
+        <div class="monthly-amount">
+          <label>Monthly amount</label>
+          <span class="value" data-cy="at-monthly-amount">{{ monthlyAmount | currency: 'USD':'symbol':(monthlyAmount % 1 == 0 ? '1.0-0' : '1.2-2') }}</span>
+        </div>
+        <div class="legend">
+          You’re planning <b>{{ savingForm.get('reachDate').value.monthDiff }} monthly deposits</b> to reach your
+          <b>{{ savingForm.get('amount').value | currency }}</b> goal by <b>October 2020</b>.
+        </div>
+      </div>
+
+      <span class="error" *ngIf="amount.errors && amount.touched">
+        amount should be greather than 0
+      </span>
+
+      <app-radius-button label="Confirm" (click)="confirmSavingGoal()"></app-radius-button>
+    </div>
+  </div>
+</div>

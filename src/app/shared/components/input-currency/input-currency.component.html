@@ -1,0 +1,15 @@
+<div>
+  <label>{{ label }}</label>
+
+  <div class="currency-field">
+    <img src="assets/images/dollar.svg" alt="currency" />
+    <input
+      currencyMask
+      [(ngModel)]="currencyValue"
+      (ngModelChange)="handleChange($event)"
+      (paste)="onPaste($event)"
+      maxlength="18"
+      [options]="{ prefix: '', thousands: ',', decimal: '.', align: 'left', allowNegative: false }"
+    />
+  </div>
+</div>

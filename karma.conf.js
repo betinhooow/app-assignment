@@ -10,23 +10,53 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-junit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      jasmine: {
+        random: false
+      }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/origin-test-app'),
+      dir: require('path').join(__dirname, 'coverage'),
       reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 42,
+        lines: 42,
+        branches: 17,
+        functions: 25
+      }
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'junit', 'dots'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    browsers: ['ChromeHeadless'],
+    singleRun: true,
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: ['--no-sandbox', '--headless', '--disable-gpu', '--remote-debugging-port=9222']
+      },
+      ChromeDebug: {
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=9333'],
+        debug: true
+      }
+    },
+    junitReporter: {
+      outputDir: 'coverage/report',
+      outputFile: 'junit-report.xml',
+      suite: '',
+      useBrowserName: false,
+      nameFormatter: undefined,
+      classNameFormatter: undefined,
+      properties: {}
+    }
   });
 };

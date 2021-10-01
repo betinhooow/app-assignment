@@ -1,0 +1,152 @@
+@import './../../../assets/styles/_origin-variables.scss';
+
+.content {
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: $brandColorPrimary;
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+    background: #FFFFFF;
+    box-shadow: 0px 16px 32px rgba(30, 42, 50, 0.08);
+    border-radius: 8px;
+    padding: 35px 40px 40px;
+    margin-top: 24px;
+
+    .card-header {
+      display: flex;
+
+      .header-data {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        h1 {
+          font-family: 'Rubik';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 120%;
+        }
+
+        span {
+          line-height: 150%;
+          color: $blueGray400;
+          margin-top: 4px;
+        }
+      }
+
+      img {
+        margin-right: 16px;
+      }
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      form {
+        width: 100%;
+        display: flex;
+        margin: 24px 0;
+
+        & > *:not(:last-child) {
+          margin-right: 16px;
+        }
+      }
+
+      .order-result {
+        border: 1px solid $blueGray50;
+        box-sizing: border-box;
+        border-radius: 8px;
+        margin-bottom: 32px;
+
+        .monthly-amount {
+          padding: 24px 32px 16px;
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            font-size: 20px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: $blueGray900;
+          }
+
+          .value {
+            font-family: 'Rubik';
+            font-style: normal;
+            font-size: 32px;
+            line-height: 120%;
+            text-align: right;
+            color: $brandColorSecondary;
+            overflow-wrap: anywhere;
+          }
+        }
+
+        .legend {
+          background: $blueGray10;
+          border-radius: 0 0 8px 8px;
+          padding: 24px 32px;
+          font-size: 12px;
+          line-height: 16px;
+
+          b {
+            font-weight: 600;
+            color: $blueGray900v2;
+          }
+        }
+      }
+
+      .error {
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #D8000C;
+      }
+    }
+  }
+}
+
+
+@media (max-width:641px)  {
+  .content .card {
+    padding: 31px 24px 40px;
+
+    .card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+
+      .order-result .monthly-amount {
+        padding: 24px 24px 16px;
+      }
+    }
+  }
+
+}
