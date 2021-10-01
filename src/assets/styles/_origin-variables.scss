@@ -1,10 +1,12 @@
-$brandColorPrimary: #1B31A8;
-$brandColorSecondary: #0079FF;
-$blueGray50: #E9EEF2;
-$blueGray400: #708797;
-$blueGray600: #4D6475;
-$blueGray900: #1E2A32;
-$blueGray900v2: #1C1E1F;
-$blueGray10: #F4F8FA;
-
-$white: #FFFFFF;
+:root {
+  --blue-gray-900: #1E2A32;
+  --brand-color-primary: #1b31a8;
+  --brand-color-secondary: #0079ff;
+  --blue-gray-50: #e9eef2;
+  --blue-gray-400: #708797;
+  --blue-gray-600: #4d6475;
+  --blue-gray-900: #1e2a32;
+  --blue-gray-900v2: #1c1e1f;
+  --blue-gray-10: #F4F8FA;
+  --white:#FFFFFF;
+}

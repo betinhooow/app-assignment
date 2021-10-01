@@ -6,7 +6,7 @@ import { SavingGoalsProxy } from 'src/app/shared/proxy/saving-goals.proxy';
 import { AppConfigurationService } from '../config/app-configuration/app-configuration.service';
 
 
-describe('SavingGoalsProxy', () => {
+describe('SavingGoalsProxy', (): void => {
   let spectator: SpectatorHttp<SavingGoalsProxy>;
 
   const savingGoalsApi: string = 'http://localhost-test/saving-goals/mock';
@@ -23,11 +23,11 @@ describe('SavingGoalsProxy', () => {
     ]
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createHttp();
   });
 
-  it('should call saving goals post ', () => {
+  it('should call saving goals post ', (): void => {
     const body: SavingGoals = {
       amount: 130000,
       reachDate: new Date()

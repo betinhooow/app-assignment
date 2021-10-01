@@ -5,11 +5,11 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppConfigurationService } from './app-configuration.service';
 
-describe('AppConfigurationModule', () => {
-  describe('Unit Tests', () => {
+describe('AppConfigurationModule', (): void => {
+  describe('Unit Tests', (): void => {
     const myCustomConfig = { apiEndpoint: 'localhost' } as AppConfiguration;
 
-    beforeEach(() => {
+    beforeEach((): void => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule, AppConfigurationModule],
         providers: [
@@ -26,7 +26,7 @@ describe('AppConfigurationModule', () => {
       });
     });
 
-    it('should return module configuration on initConfig', () => {
+    it('should return module configuration on initConfig', (): void => {
       const moduleConfig = AppConfigurationModule.initConfig('application-name');
 
       const appInitializer = moduleConfig.providers.find(item => item.provide === APP_INITIALIZER);
@@ -37,7 +37,7 @@ describe('AppConfigurationModule', () => {
       expect(appInitializer.provide).toBe(APP_INITIALIZER);
     });
 
-    it('should call AppConfigurationService initialize', () => {
+    it('should call AppConfigurationService initialize', (): void => {
       const service = TestBed.get(AppConfigurationService);
       const spy = spyOn(service, 'initialize');
 
@@ -49,7 +49,7 @@ describe('AppConfigurationModule', () => {
       expect(spy).toHaveBeenCalled();
     });
 
-    it('should run initialize when run configInitializer Factory', () => {
+    it('should run initialize when run configInitializer Factory', (): void => {
       const service = TestBed.get(AppConfigurationService);
       const spy = spyOn(service, 'initialize');
 
@@ -60,7 +60,7 @@ describe('AppConfigurationModule', () => {
       expect(spy).toHaveBeenCalled();
     });
 
-    it('should run initialize when run configInitializer', () => {
+    it('should run initialize when run configInitializer', (): void => {
       const service = TestBed.get(AppConfigurationService);
 
       const appInitializer = configInitializer(service);

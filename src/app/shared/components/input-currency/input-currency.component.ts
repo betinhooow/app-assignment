@@ -36,8 +36,8 @@ export class InputCurrencyComponent implements OnInit, ControlValueAccessor {
     event.preventDefault();
   }
 
-  propagateChange = (value: number) => {};
-  propagateTouched = () => {};
+  propagateChange = (value: number): void => {};
+  propagateTouched = (): void => {};
 
   registerOnChange(fn): void {
     this.propagateChange = fn;

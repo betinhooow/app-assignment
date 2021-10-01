@@ -1,26 +1,22 @@
-@import './../../../../assets/styles/origin-variables';
-
 button {
   border: 0;
   width: 320px;
   height: 56px;
-  background: $brandColorPrimary;
+  background: var(--brand-color-primary);;
   border-radius: 32px;
-  color: $white;
+  color: var(--white);
   line-height: 20px;
   font-weight: 600;
-}
-
-/* Ripple effect */
-.ripple {
   background-position: center;
   transition: background 0.8s;
-}
-.ripple:hover {
-  background: #3e68a9 radial-gradient(circle, transparent 1%, #3e68a9 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #5882c2;
-  background-size: 100%;
-  transition: background 0s;
+
+  &:hover {
+    background: #3e68a9 radial-gradient(circle, transparent 1%, #3e68a9 1%) center/15000%;
+  }
+
+  &:active {
+    background-color: #5882c2;
+    background-size: 100%;
+    transition: background 0s;
+  }
 }

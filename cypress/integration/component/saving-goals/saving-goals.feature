@@ -21,3 +21,7 @@ Feature: Saving Goals
   Scenario: As a user I can not be able to set negative value to amount
     When the user set "-4412.87" for amount
     Then the montlhy amount should be "$4,413"
+
+  Scenario: As a user I must see a warning when set 0 to amount
+    When the user set "0" for amount
+    Then should show a error message " amount should be greather than 0 "

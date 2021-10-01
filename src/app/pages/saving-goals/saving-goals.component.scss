@@ -1,5 +1,3 @@
-@import './../../../assets/styles/_origin-variables.scss';
-
 .content {
   min-width: 360px;
   display: flex;
@@ -12,7 +10,7 @@
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: $brandColorPrimary;
+    color: var(--brand-color-primary);;
 
     b {
       font-weight: 600;
@@ -46,7 +44,7 @@
 
         span {
           line-height: 150%;
-          color: $blueGray400;
+          color: var(--blue-gray-400);
           margin-top: 4px;
         }
       }
@@ -73,7 +71,7 @@
       }
 
       .order-result {
-        border: 1px solid $blueGray50;
+        border: 1px solid var(--blue-gray-50);
         box-sizing: border-box;
         border-radius: 8px;
         margin-bottom: 32px;
@@ -88,7 +86,7 @@
             line-height: 24px;
             display: flex;
             align-items: center;
-            color: $blueGray900;
+            color: var(--blue-gray-900);
           }
 
           .value {
@@ -97,13 +95,13 @@
             font-size: 32px;
             line-height: 120%;
             text-align: right;
-            color: $brandColorSecondary;
+            color: var(--brand-color-secondary);
             overflow-wrap: anywhere;
           }
         }
 
         .legend {
-          background: $blueGray10;
+          background: var(--blue-gray-10);
           border-radius: 0 0 8px 8px;
           padding: 24px 32px;
           font-size: 12px;
@@ -111,7 +109,7 @@
 
           b {
             font-weight: 600;
-            color: $blueGray900v2;
+            color: var(--blue-gray-900v2);
           }
         }
       }
@@ -129,24 +127,53 @@
 
 
 @media (max-width:641px)  {
-  .content .card {
-    padding: 31px 24px 40px;
+  .content {
+    h2 {
+      font-size: 18px;
+      line-height: 21,6px;
+    }
 
-    .card-content {
-      form {
-        display: flex;
-        flex-direction: column;
+    .card {
+      padding: 31px 24px 40px;
 
-        & > *:not(:last-child) {
-          margin-right: 0;
-          margin-bottom: 16px;
+      .card-header .header-data {
+        h1 {
+          font-size: 20px;
+          line-height: 24px;
+        }
+
+        span {
+          font-size: 14px;
+          line-height: 21px;
+        }
+
+        .value {
+          font-size: 24px;
+          line-height: 28px;
         }
       }
 
-      .order-result .monthly-amount {
-        padding: 24px 24px 16px;
+      .card-content {
+        form {
+          margin: 16px 0;
+          display: flex;
+          flex-direction: column;
+
+          & > *:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 16px;
+          }
+        }
+
+        .order-result .monthly-amount {
+          padding: 24px 24px 16px;
+
+          label {
+            font-size: 18px;
+            line-height: 21px;
+          }
+        }
       }
     }
   }
-
 }

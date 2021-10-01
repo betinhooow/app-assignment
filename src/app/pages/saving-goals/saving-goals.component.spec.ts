@@ -1,23 +1,23 @@
-import { createComponentFactory, Spectator, SpyObject } from '@ngneat/spectator';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MainComponent } from './main.component';
-import { MainRoutingModule } from './main-routing.module';
-import { InputCurrencyModule } from 'src/app/shared/components/input-currency/input-currency.module';
-import { FutureMonthSelectorModule } from 'src/app/shared/components/future-month-selector/future-month-selector.module';
-import { RadiusButtonModule } from 'src/app/shared/components/radius-button/radius-button.module';
-import { SavingGoalsService } from './saving-goals.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { createComponentFactory, Spectator, SpyObject } from '@ngneat/spectator';
 import { of } from 'rxjs';
+import { FutureMonthSelectorModule } from 'src/app/shared/components/future-month-selector/future-month-selector.module';
+import { InputCurrencyModule } from 'src/app/shared/components/input-currency/input-currency.module';
+import { RadiusButtonModule } from 'src/app/shared/components/radius-button/radius-button.module';
+import { SavingGoalsRoutingModule } from './saving-goals-routing.module';
+import { SavingGoalsComponent } from './saving-goals.component';
+import { SavingGoalsService } from './saving-goals.service';
 
-describe('MainComponent', () => {
-  let spectator: Spectator<MainComponent>;
+describe('SavingGoalsComponent', (): void => {
+  let spectator: Spectator<SavingGoalsComponent>;
   let savingGoalsServiceSpy: SpyObject<SavingGoalsService>;
 
-  const createComponent = createComponentFactory<MainComponent>({
-    component: MainComponent,
+  const createComponent = createComponentFactory<SavingGoalsComponent>({
+    component: SavingGoalsComponent,
     imports: [
       CommonModule,
-      MainRoutingModule,
+      SavingGoalsRoutingModule,
       FormsModule,
       ReactiveFormsModule,
       InputCurrencyModule,
@@ -27,7 +27,7 @@ describe('MainComponent', () => {
     mocks: [SavingGoalsService]
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
     savingGoalsServiceSpy = spectator.inject(SavingGoalsService);
 
@@ -37,11 +37,11 @@ describe('MainComponent', () => {
     }))
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeTruthy();
   });
 
-  it('should initialize the forms', () => {
+  it('should initialize the forms', (): void => {
     const { amount, reachDate } = spectator.component.savingForm.controls;
 
     expect(amount.validator).not.toBeNull();
@@ -51,7 +51,7 @@ describe('MainComponent', () => {
     expect(spectator.component.monthlyAmount).toEqual(0);
   });
 
-  it('should calculate monthly amount when amount changed', () => {
+  it('should calculate monthly amount when amount changed', (): void => {
     const { amount } = spectator.component.savingForm.controls;
 
     amount.setValue(25000);
@@ -59,7 +59,7 @@ describe('MainComponent', () => {
     expect(spectator.component.monthlyAmount).toEqual(25000);
   });
 
-  it('should calculate monthly amount when reach date changed', () => {
+  it('should calculate monthly amount when reach date changed', (): void => {
     const { amount, reachDate } = spectator.component.savingForm.controls;
 
     amount.setValue(25000);
@@ -71,7 +71,7 @@ describe('MainComponent', () => {
     expect(spectator.component.monthlyAmount).toEqual(521);
   });
 
-  it('should submit goals if form is valid', () => {
+  it('should submit goals if form is valid', (): void => {
     const { amount, reachDate } = spectator.component.savingForm.controls;
     const amountValue: number = 450000;
     const date: Date = new Date();
@@ -86,7 +86,7 @@ describe('MainComponent', () => {
     });
   });
 
-  it('should not submit goals if form is invalid', () => {
+  it('should not submit goals if form is invalid', (): void => {
     const { amount, reachDate } = spectator.component.savingForm.controls;
     const amountValue: number = 0;
     const date: Date = new Date();

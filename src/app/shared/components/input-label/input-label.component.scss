@@ -1,0 +1,15 @@
+
+label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color : var(--blue-gray-900);
+}
+
+@media (max-width:641px)  {
+  label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

@@ -4,23 +4,23 @@ import { SavingGoalsPageObject } from '../../page-objects/saving-goals.po';
 
 const savingGoalsPageObject: SavingGoalsPageObject = new SavingGoalsPageObject();
 
-Given('the user is on the saving goals for home area', () => {
+Given('the user is on the saving goals for home area', (): void => {
   savingGoalsPageObject.goToSavingGoalsPage();
 });
 
-Given('the saving goals elements was loaded', () => {
+Given('the saving goals elements was loaded', (): void => {
   savingGoalsPageObject.verifyVisibleElements();
 });
 
-Given('the current date is {string} of {int}', (month: string, year: number) => {
+Given('the current date is {string} of {int}', (month: string, year: number): void => {
   savingGoalsPageObject.setupDateNow(month, year);
 });
 
-When('the user set {string} for amount', (value: string) => {
+When('the user set {string} for amount', (value: string): void => {
   savingGoalsPageObject.setInputValue(SavingGoalsElements.savingGoalsAmountInput, value);
 });
 
-And('the user set {int} months in the {futureOrPast}', (reachMonths: number, isInFuture: boolean) => {
+And('the user set {int} months in the {futureOrPast}', (reachMonths: number, isInFuture: boolean): void => {
   if (isInFuture) {
     savingGoalsPageObject.goNextMonthTimes(reachMonths);
   } else {
@@ -28,14 +28,14 @@ And('the user set {int} months in the {futureOrPast}', (reachMonths: number, isI
   }
 });
 
-Then('the montlhy amount should be {string}', (value: string) => {
+Then('the montlhy amount should be {string}', (value: string): void => {
   savingGoalsPageObject.checkMonthlyAmount(value);
 });
 
-And('the reach date should be in {string} of {int}', (month: string, year: number) => {
+And('the reach date should be in {string} of {int}', (month: string, year: number): void => {
   savingGoalsPageObject.checkReachDate(month, year);
 });
 
-And('press the right key {int} times', (times: number) => {
-  savingGoalsPageObject.pressArrowRight(times);
+Then('should show a error message {string}', (message: string): void => {
+  savingGoalsPageObject.checkErrorWarning(message);
 });

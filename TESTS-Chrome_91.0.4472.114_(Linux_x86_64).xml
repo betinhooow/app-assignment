@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 91.0.4472.114 (Linux x86_64)" package="" timestamp="2021-10-01T16:49:25" id="0" hostname="lnb028236cps" tests="44" errors="0" failures="0" time="0.377">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create" time="0.051" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppComponent"/>
+  <testcase name="SavingGoalsComponent should create" time="0.045" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsComponent should initialize the forms" time="0.022" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsComponent should calculate monthly amount when amount changed" time="0.014" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsComponent should calculate monthly amount when reach date changed" time="0.012" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsComponent should submit goals if form is valid" time="0.015" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsComponent should not submit goals if form is invalid" time="0.013" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsComponent"/>
+  <testcase name="SavingGoalsService should call saving goals proxy " time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsService"/>
+  <testcase name="FutureMonthSelectorComponent should create with label param" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should set dates when initialized" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should set next month" time="0.011" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should set previous month" time="0.01" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should not be able to set the current or past month" time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should go next month when focused and press arrow right" time="0.01" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should go previous month when focused and press left right" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should not change date when focused and press any other key" time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="FutureMonthSelectorComponent should not change date when the element is not focused but press right key" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).FutureMonthSelectorComponent"/>
+  <testcase name="InputCurrencyComponent should create" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="InputCurrencyComponent should set form value when initialized" time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="InputCurrencyComponent should set currency when changed value" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="InputCurrencyComponent should set currency when changed value" time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="InputCurrencyComponent should prevent action on paste value" time="0.008" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="InputCurrencyComponent should register ControlValueAccessor methods" time="0.006" classname="Chrome_91_0_4472_114_(Linux_x86_64).InputCurrencyComponent"/>
+  <testcase name="OriginHeaderComponent should create" time="0.005" classname="Chrome_91_0_4472_114_(Linux_x86_64).OriginHeaderComponent"/>
+  <testcase name="RadiusButtonComponent should create with label param" time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).RadiusButtonComponent"/>
+  <testcase name="AppConfigurationModule Unit Tests should return module configuration on initConfig" time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationModule Unit Tests"/>
+  <testcase name="AppConfigurationModule Unit Tests should call AppConfigurationService initialize" time="0.005" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationModule Unit Tests"/>
+  <testcase name="AppConfigurationModule Unit Tests should run initialize when run configInitializer Factory" time="0.002" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationModule Unit Tests"/>
+  <testcase name="AppConfigurationModule Unit Tests should run initialize when run configInitializer" time="0.003" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationModule Unit Tests"/>
+  <testcase name="AppConfigurationService should be created" time="0.003" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationService"/>
+  <testcase name="AppConfigurationService should return configuration provided on APP_CONFIG before initialize" time="0.003" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationService"/>
+  <testcase name="AppConfigurationService should get application-name.json on current location path" time="0.005" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationService"/>
+  <testcase name="AppConfigurationService should merge configuration on initialize, prioritizing get from request" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationService"/>
+  <testcase name="AppConfigurationService should allow Generics configuration type on get" time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationService"/>
+  <testcase name="AppConfigurationTestingModule Unit Tests should return module configuration on initConfig" time="0" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationTestingModule Unit Tests"/>
+  <testcase name="AppConfigurationTestingModule Unit Tests should call AppConfigurationService initialize" time="0.001" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationTestingModule Unit Tests"/>
+  <testcase name="AppConfigurationTestingService Unit Tests should be created" time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationTestingService Unit Tests"/>
+  <testcase name="AppConfigurationTestingService Unit Tests should return configuration provided on APP_CONFIG before initialize" time="0.003" classname="Chrome_91_0_4472_114_(Linux_x86_64).AppConfigurationTestingService Unit Tests"/>
+  <testcase name="SavingGoalsProxy should call saving goals post " time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).SavingGoalsProxy"/>
+  <testcase name="Valid Value Validator should false set error when inserted value is " time="0.01" classname="Chrome_91_0_4472_114_(Linux_x86_64).Valid Value Validator"/>
+  <testcase name="Valid Value Validator should false set error when inserted value is 0" time="0.007" classname="Chrome_91_0_4472_114_(Linux_x86_64).Valid Value Validator"/>
+  <testcase name="Valid Value Validator should false set error when inserted value is null" time="0.004" classname="Chrome_91_0_4472_114_(Linux_x86_64).Valid Value Validator"/>
+  <testcase name="Valid Value Validator should not set error when inserted value is some-value" time="0.005" classname="Chrome_91_0_4472_114_(Linux_x86_64).Valid Value Validator"/>
+  <testcase name="Valid Value Validator should not set error when inserted value is 1000" time="0.005" classname="Chrome_91_0_4472_114_(Linux_x86_64).Valid Value Validator"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

@@ -16,7 +16,7 @@ class ValidValueValidatorTestComponent implements OnInit {
   }
 }
 
-describe('Valid Value Validator', () => {
+describe('Valid Value Validator', (): void => {
   let spectator: Spectator<ValidValueValidatorTestComponent>;
 
   const createComponent = createComponentFactory<ValidValueValidatorTestComponent>({
@@ -25,7 +25,7 @@ describe('Valid Value Validator', () => {
     detectChanges: false
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
     spectator.detectChanges();
   });
@@ -36,8 +36,8 @@ describe('Valid Value Validator', () => {
     { value: null, expectedError: { invalidValue: true } },
     { value: 'some-value', expectedError: null },
     { value: 1000, expectedError: null }
-  ].forEach(({ expectedError, value }) => {
-    it(`should ${!expectedError && 'not'} set error when inserted value is ${value}`, () => {
+  ].forEach(({ expectedError, value }): void => {
+    it(`should ${!expectedError && 'not'} set error when inserted value is ${value}`, (): void => {
       spectator.component.form.markAsDirty();
       spectator.component.form.setValue(value);
 

@@ -1,20 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { createComponentFactory, Spectator } from '@ngneat/spectator';
-
 import { RadiusButtonComponent } from './radius-button.component';
 
-describe('RadiusButtonComponent', () => {
+
+describe('RadiusButtonComponent', (): void => {
   let spectator: Spectator<RadiusButtonComponent>;
   const createComponent = createComponentFactory<RadiusButtonComponent>({
     component: RadiusButtonComponent,
     imports: []
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
   });
 
-  it('should create with label param', () => {
+  it('should create with label param', (): void => {
     const label: string = "label button";
     spectator.setInput('label', label);
 

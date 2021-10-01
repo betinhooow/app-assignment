@@ -5,15 +5,15 @@ import { AppConfigurationTestingService } from './app-configuration-testing.serv
 import { AppConfiguration, APP_CONFIG } from '../app-configuration.model';
 import { AppConfigurationService } from '../app-configuration.service';
 
-describe('AppConfigurationTestingService', () => {
-  describe('Unit Tests', () => {
+describe('AppConfigurationTestingService', (): void => {
+  describe('Unit Tests', (): void => {
     interface MyCustomConfiguration extends AppConfiguration {
       myCustomSetting: string;
     }
 
     const myCustomConfig = { apiEndpoint: 'localhost', myCustomSetting: 'custom-value' } as MyCustomConfiguration;
 
-    beforeEach(() => {
+    beforeEach((): void => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule],
         providers: [
@@ -23,12 +23,12 @@ describe('AppConfigurationTestingService', () => {
       });
     });
 
-    it('should be created', () => {
+    it('should be created', (): void => {
       const service: AppConfigurationService<AppConfiguration> = TestBed.get(AppConfigurationService);
       expect(service).toBeTruthy();
     });
 
-    it('should return configuration provided on APP_CONFIG before initialize', () => {
+    it('should return configuration provided on APP_CONFIG before initialize', (): void => {
       const service: AppConfigurationService<AppConfiguration> = TestBed.get(AppConfigurationService);
 
       expect(service.get()).toEqual(myCustomConfig);

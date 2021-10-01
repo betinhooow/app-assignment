@@ -46,8 +46,8 @@ export class FutureMonthSelectorComponent implements OnInit, ControlValueAccesso
 
   writeValue(): void {}
 
-  propagateChange = (x: any) => {};
-  propagateTouched = () => {};
+  propagateChange = (data: any): void => {};
+  propagateTouched = (): void => {};
 
   registerOnChange(fn): void {
     this.propagateChange = fn;

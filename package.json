@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
     "test-local": "ng test --watch=true --code-coverage --browsers Chrome",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "postinstall": "ngcc",
     "cypress:open": "cypress open -c baseUrl=http://localhost:4200",
     "format": "prettier 'src/**/*.ts' --write"

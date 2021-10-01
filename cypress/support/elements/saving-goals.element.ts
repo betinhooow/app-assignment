@@ -5,4 +5,5 @@ export class SavingGoalsElements {
   static savingGoalsReachDateArrowLeft: string = '[data-cy=at-reach-date-arrow-left]';
   static savingGoalsMonthlyAmount: string = '[data-cy=at-monthly-amount]';
   static savingGoalsReachDate: string = '[data-cy=at-reach-date] .data';
+  static savingGoalsWarning: string = '[data-cy=at-warning]';
 }

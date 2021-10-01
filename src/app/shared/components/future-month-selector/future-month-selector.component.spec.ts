@@ -2,18 +2,18 @@ import { createComponentFactory, Spectator } from '@ngneat/spectator';
 import { KEY_CODE } from '../../enum/key-code.enum';
 import { FutureMonthSelectorComponent } from './future-month-selector.component';
 
-describe('FutureMonthSelectorComponent', () => {
+describe('FutureMonthSelectorComponent', (): void => {
   let spectator: Spectator<FutureMonthSelectorComponent>;
   const createComponent = createComponentFactory<FutureMonthSelectorComponent>({
     component: FutureMonthSelectorComponent,
     imports: []
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
   });
 
-  it('should create with label param', () => {
+  it('should create with label param', (): void => {
     const label: string = "label button";
     spectator.setInput('label', label);
 
@@ -21,7 +21,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.label).toEqual(label);
   });
 
-  it('should set dates when initialized', () => {
+  it('should set dates when initialized', (): void => {
     const date: Date = new Date();
     date.setMonth(date.getMonth() + 1);
 
@@ -29,7 +29,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(date.getFullYear());
   });
 
-  it('should set next month', () => {
+  it('should set next month', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 2);
 
@@ -39,7 +39,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(expectNextDate.getFullYear());
   });
 
-  it('should set previous month', () => {
+  it('should set previous month', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 2);
 
@@ -53,7 +53,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(expectNextDate.getFullYear());
   });
 
-  it('should not be able to set the current or past month', () => {
+  it('should not be able to set the current or past month', (): void => {
     const date: Date = new Date();
     date.setMonth(date.getMonth() + 1);
 
@@ -65,7 +65,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(date.getFullYear());
   });
 
-  it('should go next month when focused and press arrow right', () => {
+  it('should go next month when focused and press arrow right', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 2);
 
@@ -80,7 +80,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(expectNextDate.getFullYear());
   });
 
-  it('should go previous month when focused and press left right', () => {
+  it('should go previous month when focused and press left right', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 2);
 
@@ -97,7 +97,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(expectNextDate.getFullYear());
   });
 
-  it('should not change date when focused and press any other key', () => {
+  it('should not change date when focused and press any other key', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 1);
 
@@ -111,7 +111,7 @@ describe('FutureMonthSelectorComponent', () => {
     expect(spectator.component.year).toEqual(expectNextDate.getFullYear());
   });
 
-  it('should not change date when the element is not focused but press right key', () => {
+  it('should not change date when the element is not focused but press right key', (): void => {
     const expectNextDate: Date = new Date();
     expectNextDate.setMonth(expectNextDate.getMonth() + 1);
 

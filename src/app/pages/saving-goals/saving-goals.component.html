@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <span class="error" *ngIf="amount.errors && amount.touched">
+      <span class="error" data-cy="at-warning" *ngIf="amount.errors && amount.touched">
         amount should be greather than 0
       </span>
 

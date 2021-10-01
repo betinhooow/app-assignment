@@ -23,7 +23,7 @@ export class AppConfigurationService<T extends AppConfiguration> {
     return this.http
       .get(`./${this.appName}.json?${randomValue}`)
       .pipe(
-        tap((value: any) => (this.configuration = { ...this.configuration, ...value }))
+        tap((value: any) => (this.configuration = { ...this.configuration, ...value })),
       )
       .toPromise();
   }

@@ -2,7 +2,7 @@ import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator'
 import { AppConfiguration, APP_CONFIG, APP_CONFIG_NAME } from './app-configuration.model';
 import { AppConfigurationService } from './app-configuration.service';
 
-describe('AppConfigurationService', () => {
+describe('AppConfigurationService', (): void => {
   interface MyCustomConfiguration extends AppConfiguration {
     myCustomSetting: string;
   }
@@ -19,27 +19,27 @@ describe('AppConfigurationService', () => {
     ]
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createHttp();
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     jasmine.clock().mockDate(new Date());
   });
 
-  afterEach(() => {
+  afterEach((): void => {
     jasmine.clock().uninstall();
   });
 
-  it('should be created', () => {
+  it('should be created', (): void => {
     expect(spectator.service).toBeTruthy();
   });
 
-  it('should return configuration provided on APP_CONFIG before initialize', () => {
+  it('should return configuration provided on APP_CONFIG before initialize', (): void => {
     expect(spectator.service.get()).toEqual(myCustomConfig);
   });
 
-  it('should get application-name.json on current location path', () => {
+  it('should get application-name.json on current location path', (): void => {
     const applicationName = 'application-name';
     const randomValue = new Date().getTime();
 
@@ -48,7 +48,7 @@ describe('AppConfigurationService', () => {
     spectator.expectOne(`./${applicationName}.json?${randomValue}`, HttpMethod.GET);
   });
 
-  it('should merge configuration on initialize, prioritizing get from request', () => {
+  it('should merge configuration on initialize, prioritizing get from request', (): void => {
     const applicationName = 'application-name';
     const expectedResult = {
       apiEndpoint: 'http://localhost:0000',
@@ -68,7 +68,7 @@ describe('AppConfigurationService', () => {
     expect(spectator.service.get()).toEqual({ ...myCustomConfig, ...expectedResult });
   });
 
-  it('should allow Generics configuration type on get', () => {
+  it('should allow Generics configuration type on get', (): void => {
     const applicationName = 'application-name';
     const expectedResult: MyCustomConfiguration = {
       apiEndpoint: 'http://localhost:4200',

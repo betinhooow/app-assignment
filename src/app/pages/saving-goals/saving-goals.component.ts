@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { round } from 'lodash';
 import { validValueValidator } from 'src/app/shared/validators/valid-value.validator';
 import { SavingGoalsService } from './saving-goals.service';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  templateUrl: './saving-goals.component.html',
+  styleUrls: ['./saving-goals.component.scss']
 })
-export class MainComponent implements OnInit {
+export class SavingGoalsComponent implements OnInit {
   savingForm: FormGroup;
   monthlyAmount: number = 0;
 
@@ -32,6 +32,7 @@ export class MainComponent implements OnInit {
   confirmSavingGoal(): void {
     const { amount, reachDate } = this.savingForm.controls;
 
+    amount.markAsTouched();
     if (this.savingForm.valid) {
       this.savingGoalsService.submitSavingGoals({
         amount: amount.value,

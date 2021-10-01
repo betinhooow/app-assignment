@@ -1,18 +1,18 @@
 import { createComponentFactory, Spectator } from '@ngneat/spectator';
 import { OriginHeaderComponent } from './origin-header.component';
 
-describe('OriginHeaderComponent', () => {
+describe('OriginHeaderComponent', (): void => {
   let spectator: Spectator<OriginHeaderComponent>;
   const createComponent = createComponentFactory<OriginHeaderComponent>({
     component: OriginHeaderComponent,
     imports: []
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeTruthy();
   });
 });

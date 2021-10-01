@@ -48,9 +48,12 @@ export class SavingGoalsPageObject {
     });
   }
 
-  public pressArrowRight(times: number): void {
-    for (let index = 0; index < times; index++) {
-      cy.get('.month').click().type('{rightarrow}');
-    }
+  public checkErrorWarning(message: string): void {
+    cy.get(SavingGoalsElements.savingGoalsWarning)
+    .should('be.visible')
+    .invoke('text')
+    .then($text => {
+      expect($text).eq(message);
+    });
   }
 }
