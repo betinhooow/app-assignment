@@ -24,7 +24,7 @@
 ## 📝 Summary
 
 - [How to run](#run)
-- [Quality](#tests)
+- [Quality](#quality)
 - [Applied Concepts](#concepts)
 
 ## 🚀 How to run<a name = "run"></a>
