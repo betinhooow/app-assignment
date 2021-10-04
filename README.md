@@ -75,5 +75,3 @@ npm run cypress:open
 - Webpack
 - RxJs
 - Analytics (with a fake token)
-
-
